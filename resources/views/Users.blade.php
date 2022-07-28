@@ -53,16 +53,21 @@
       <td>{{$user->phone}}</td>
       <td>
       <div class="d-grid gap-2 d-md-block">
-  <button class="btn btn-info" type="button">Edit</button>
-  <button class="btn btn-danger" type="button">Delete</button>
+      <a href="{{url('/Edituser/'. $user->id)}}" ><button class="btn btn-info mb-3" type="button">Edit</button> </a>
+      <a href="{{url('/deleteuser/'. $user->id)}}"><button class="btn btn-danger" type="button">Delete</button></a>
+ 
+  
 </div>
+
       </td>
     </tr>
     @endforeach
     
   </tbody>
 </table>
-
+<div class="text-center">
+<a href="/createuser" class="btn btn-info">Create User</a>
+</div>
 
 
 </div>
