@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function createuser(Request $request)
     {
-        $user = new user();
+        $user = new User();
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
@@ -27,7 +27,7 @@ class UserController extends Controller
 
     }
     public function EditUser(Request $request, $id){
-        $user = user::find($id);
+        $user = User::find($id);
         // $user->name = $request->input('name');
         // $user->email = $request->input('email');
         // $user->phone = $request->input('phone');
@@ -37,17 +37,17 @@ class UserController extends Controller
     }
     public function destroy($id)
     {
-        $user = user::find($id);
+        $user = User::find($id);
         $user->destroy($id);
         return redirect('/Users');
     }
     public function GetUser(){
-        $users = user::all();
+        $users = User::all();
         return view ('Users',['users'=>$users]);
         
     }
     public function welcome(){
-        $users = user::all();
+        $users = User::all();
         return view ('Users',['users'=>$users]);
         
     }
